@@ -1,0 +1,17 @@
+<!doctype html>{# index.twig #}
+<h1>Slim BBS</h1>
+
+<form action="/bbs/" method="POST">
+お名前:<input name="name" value=""><br>
+タイトル:<input name="title" value=""><br>
+本文:<textarea name="body"></textarea><br>
+<button>投稿する</button>
+</form>
+
+<hr>
+
+{% for key, datum in data %}
+<p>名前:{{ datum.name }}, タイトル:{{ datum.title }} ({{ datum.created_at }})
+<pre>{{ datum.body }}</pre>
+<hr>    
+{% endfor %}

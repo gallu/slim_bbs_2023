@@ -1,0 +1,14 @@
+<!doctype html>{# index.twig #}
+<h1>Slim final_exam</h1>
+
+<div>
+エラー: {{ error }}<br>
+</div>
+
+<form action="/final_exam/" method="POST">
+  <input type="text" name="input_1"><br>
+  <br>
+  <button>送信</button>
+</form>
+
+入力文字は {{ input_1 }} です。

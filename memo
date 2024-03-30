@@ -1,0 +1,30 @@
+    composer require slim/slim
+    composer require slim/psr7
+
+    composer require php-di/slim-bridge
+
+    composer require twig/twig
+
+composer.phar create-project gallu/slim4-simple-skeleton slim_bbs
+
+------------
+mv   by_environment_config.php   by_environment_config_dev.php
+ln  -s  by_environment_config_dev.php  by_environment_config.php
+
+------------
+php -S 0.0.0.0:自分のport番号 -t public public/index.php
+
+------------
+composer.phar require robmorgan/phinx
+vendor/bin/phinx init
+
+mkdir  -p  db/migrations  db/seeds
+
+php vendor/bin/phinx create SlimBbses
+
+php vendor/bin/phinx migrate --dry-run
+
+php vendor/bin/phinx rollback 
+
+composer.phar require --dev phpstan/phpstan
+
